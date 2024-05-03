@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using TDHRC.Context;
 using TDHRC.Models;
 
 namespace TDHRC.Controllers
@@ -7,13 +9,63 @@ namespace TDHRC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        //Login
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(string username, string password, string IsRememberME)
+        {
+
+            var admin = _context.Admins.FirstOrDefault(a => a.Username == username && a.Password == password);
+    
+            CookieOptions options = new CookieOptions();
+
+            if (admin != null)
+            {
+                TempData["success"] = "Login Successful";
+                if (IsRememberME == "on")
+                {
+                    options.Expires = DateTime.Now.AddDays(7);
+                }
+                else
+                {
+                    options.Expires = DateTime.Now.AddDays(1);
+                }
+               
+                Response.Cookies.Append("Username", admin.Username, options);
+                return RedirectToAction("Index", "Admin");
+            }
+            else
+            {
+                TempData["error"] = "Login Failed";
+                return View();
+            }
+           
+        }
+
+            //Forgot Password
+            public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        public IActionResult About()
         {
             return View();
         }
