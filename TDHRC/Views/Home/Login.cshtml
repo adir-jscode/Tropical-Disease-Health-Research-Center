@@ -38,7 +38,7 @@
                         <div class="card-body">
                             <div class="px-3">
                                 <div class="auth-logo-box">
-                                    <a href="../dashboard/analytics-index.html" class="logo logo-admin"><img src="~/assets/img/tdhrc_logo.jpg" height="55" alt="logo" class="auth-logo"></a>
+                                    <a asp-action="Index" class="logo logo-admin"><img src="~/assets/img/tdhrc_logo.jpg" height="55" alt="logo" class="auth-logo"></a>
                                 </div><!--end auth-logo-box-->
 
                                 <div class="text-center auth-logo-text">
@@ -83,7 +83,7 @@
 
                                     <div class="form-group mb-0 row">
                                         <div class="col-12 mt-2">
-                                            <button asp-controller="Home" asp-action="Login" class="btn btn-gradient-primary btn-round btn-block waves-effect waves-light" type="submit">Log In <i class="fas fa-sign-in-alt ml-1"></i></button>
+                                            <button asp-controller="Home" asp-action="LoginValidate" class="btn btn-gradient-primary btn-round btn-block waves-effect waves-light" type="submit">Log In <i class="fas fa-sign-in-alt ml-1"></i></button>
                                         </div><!--end col-->
                                     </div> <!--end form-group-->
                                 </form><!--end form-->

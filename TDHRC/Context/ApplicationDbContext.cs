@@ -13,6 +13,7 @@ namespace TDHRC.Context
         }
 
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<Publications> Publications { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

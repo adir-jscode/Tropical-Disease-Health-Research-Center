@@ -22,6 +22,13 @@ namespace TDHRC.Controllers
             return View();
         }
 
+        public IActionResult Publications()
+        {
+            //get all publications
+           var publications = _context.Publications.ToList();
+            return View(publications);
+        }
+
         //Login
         public IActionResult Login()
         {
@@ -29,7 +36,7 @@ namespace TDHRC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string username, string password, string IsRememberME)
+        public IActionResult LoginValidate(string username, string password, string IsRememberME)
         {
 
             var admin = _context.Admins.FirstOrDefault(a => a.Username == username && a.Password == password);
@@ -53,10 +60,26 @@ namespace TDHRC.Controllers
             }
             else
             {
-                TempData["error"] = "Login Failed";
-                return View();
+                TempData["Error"] = "Credentials Incorrect";
+                TempData["Header"] = "Authatication Error";
+                return RedirectToAction("Login");
             }
            
+        }
+
+        //Logout
+        public IActionResult Logout()
+        {
+            TempData["success"] = "Logout Successful";
+            //delete all cookies
+            foreach (var cookie in Request.Cookies.Keys)
+            {
+                Response.Cookies.Delete(cookie);
+            }
+
+            
+            return RedirectToAction("Login");
+            
         }
 
             //Forgot Password

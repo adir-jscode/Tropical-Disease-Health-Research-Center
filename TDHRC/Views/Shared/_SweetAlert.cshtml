@@ -1,0 +1,36 @@
+﻿@if (TempData["success"] != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            Swal.fire('@TempData["Header"]', '@TempData["success"]', "success");
+        };
+
+    </script>
+}
+
+@if (TempData["error"] != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            Swal.fire('@TempData["Header"]', '@TempData["error"]', "error");
+        };
+    </script>
+}
+
+@if (TempData["info"] != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            Swal.fire('@TempData["Header"]', '@TempData["info"]', "info");
+        };
+    </script>
+}
+
+@if (TempData["warning"] != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            Swal.fire('@TempData["Header"]', '@TempData["warning"]', "warning");
+        };
+    </script>
+}
