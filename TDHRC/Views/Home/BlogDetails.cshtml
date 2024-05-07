@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Blogs
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2" style="background-image: url('https://www.thegrma.com/wp-content/uploads/2020/01/banner-hub-2020.jpg');">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap hero-cap2 pt-70">
+                            <h2>Blog Details</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a asp-action="Index">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Blog Details</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!-- Blog Area Start -->
+    <section class="blog_area single-post-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post">
+                        <div class="feature-img">
+                            @* <img class="img-fluid" src="@Model.ImageUrl" alt=""> *@
+                        </div>
+                        <div class="blog_details">
+                            <h2 style="color: #2d2d2d;">@Model.Title</h2>
+                            <ul class="blog-info-link mt-3 mb-4">
+                                <li><a href="#"><i class="fa fa-user"></i> @Model.Author</a></li>
+                                
+                            </ul>
+                            
+                            @Html.Raw(Model.Content)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Area End -->
+</main>

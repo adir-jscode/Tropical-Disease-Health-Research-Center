@@ -93,6 +93,19 @@ namespace TDHRC.Controllers
             return View();
         }
 
+        public IActionResult Blogs()
+        {
+            var blog = _context.Blogs.ToList();
+            return View(blog);
+        }
+
+        //blog details
+        public IActionResult BlogDetails(string id)
+        {
+            var blog = _context.Blogs.FirstOrDefault(b => b.Id == id);
+            return View(blog);
+        }
+
         public IActionResult Privacy()
         {
             return View();

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TDHRC.Context;
+using TDHRC.Models;
 
 namespace TDHRC.Controllers
 {
@@ -67,9 +68,39 @@ namespace TDHRC.Controllers
             
         }
 
+
+
+
         public IActionResult EditPublication()
         {
             return View();
         }
+
+        //Add Blogs
+        public IActionResult AddBlog()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddBlog(Blogs blogs)
+        {
+            if (ModelState.IsValid)
+            {
+                var blog = new Blogs
+                {
+                    Title = blogs.Title,
+                    Author = blogs.Author,
+                    Content = blogs.Content
+                };
+                _context.Blogs.Add(blog);
+                _context.SaveChanges();
+                TempData["success"] = "Blog Added Successfully";
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+       
     }
 }

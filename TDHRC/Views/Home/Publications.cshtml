@@ -7,12 +7,13 @@
 
 <main>
     <!--? Hero Start -->
-    <div class="slider-area2">
+    <div class="slider-area2" style="background-image: url('https://www-file.huawei.com/-/media/corp2020/media-center/image/transform/all-issues-cover/banner-all-issue-pc.jpg');">
         <div class="slider-height2 d-flex align-items-center">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="hero-cap hero-cap2 pt-70">
+                       
+                        <div class="hero-cap hero-cap2 pt-70" >
                             <h2>Publications</h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -50,5 +51,27 @@
         </div>
     </section>
     <!-- Publications Section End -->
+
+    <!--Card-->
+    @* <section class="publications-section">
+        <div class="container">
+            <div class="row">
+                @foreach (var publication in Model)
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <h5 class="card-title">@publication.Title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Author: @publication.Author</h6>
+                                <p class="card-text">@Html.Raw(publication.Content)</p>
+                                <a href="@publication.JournalLink" target="_blank" class="card-link">Find Out More</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section> *@
+
     
 </main>

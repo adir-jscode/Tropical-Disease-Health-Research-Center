@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2" style="background-image: url('https://i.imgur.com/rCuEOv9.jpeg');">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap hero-cap2 pt-70">
+                            <h2>Blogs</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a asp-action="Index">Home</a></li>
+                                    <li class="breadcrumb-item"><a asp-action="Blogs">Blogs</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Blog Area Start-->
+    <section class="blog_area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+                        @foreach (var blog in Model)
+                        {
+                            <article class="blog_item">
+                                <div class="blog_item_img">
+                                    <img class="card-img rounded-0" src="~/assets/img/blog/single_blog_1.png" alt="">
+                                </div>
+                                <div class="blog_details">
+                                    <a class="d-inline-block" href="~/Home/BlogDetails/@blog.Id">
+                                        <h2 class="blog-head" style="color: #2d2d2d;">@blog.Title</h2>
+                                    </a>
+                                    
+                                    <ul class="blog-info-link">
+                                        <li><a href="#"><i class="fa fa-user"></i>@blog.Author</a></li>
+
+                                    </ul>
+                                </div>
+                            </article>
+                        }
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Blog Area End -->
+</main>
