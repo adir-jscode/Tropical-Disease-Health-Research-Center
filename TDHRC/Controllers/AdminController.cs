@@ -13,6 +13,12 @@ namespace TDHRC.Controllers
         {
             _context = context;
         }
+
+        private void UpdateLayout()
+        {
+           
+           
+        }
         public bool IsAdminLoggedIn()
         {
             if (Request.Cookies["Username"] != null)
@@ -27,8 +33,14 @@ namespace TDHRC.Controllers
 
         public IActionResult Index()
         {
+
             if(IsAdminLoggedIn())
             {
+                var publications = _context.Publications.ToList();
+                ViewBag.Publications = publications;
+
+                var blogs = _context.Blogs.ToList();
+                ViewBag.Blogs = blogs;
                 return View();
             }
             else
@@ -43,8 +55,17 @@ namespace TDHRC.Controllers
 
         public IActionResult AddPublication()
         {
-           
-            return View();
+            if (IsAdminLoggedIn())
+            {
+                return View();
+            }
+            else
+            {
+                TempData["error"] = "You need to login first";
+                return RedirectToAction("Login", "Home");
+            }
+
+            
         }
 
         //Add Publication
@@ -55,9 +76,11 @@ namespace TDHRC.Controllers
             {
                 var publication = new Publications
                 {
-                   
+                   Title = publications.Title,
                     Content = publications.Content,
-                    JournalLink = publications.JournalLink
+                    JournalLink = publications.JournalLink,
+                    ImageUrl = publications.ImageUrl
+
                 };
                 _context.Publications.Add(publication);
                 _context.SaveChanges();
@@ -73,13 +96,29 @@ namespace TDHRC.Controllers
 
         public IActionResult EditPublication()
         {
-            return View();
+            if (IsAdminLoggedIn())
+            {
+                return View();
+            }
+            else
+            {
+                TempData["error"] = "You need to login first";
+                return RedirectToAction("Login", "Home");
+            }
         }
 
         //Add Blogs
         public IActionResult AddBlog()
         {
-            return View();
+            if (IsAdminLoggedIn())
+            {
+                return View();
+            }
+            else
+            {
+                TempData["error"] = "You need to login first";
+                return RedirectToAction("Login", "Home");
+            }
         }
 
         [HttpPost]
@@ -91,7 +130,8 @@ namespace TDHRC.Controllers
                 {
                     Title = blogs.Title,
                     Author = blogs.Author,
-                    Content = blogs.Content
+                    Content = blogs.Content,
+                    ImageUrl = blogs.ImageUrl
                 };
                 _context.Blogs.Add(blog);
                 _context.SaveChanges();

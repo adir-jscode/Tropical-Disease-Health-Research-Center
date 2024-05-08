@@ -14,5 +14,7 @@ namespace TDHRC.Models
 
         [Required(ErrorMessage = "The Content field is required.")]
         public string? Content { get; set; }
+
+        public string? ImageUrl { get; set; }
     }
 }

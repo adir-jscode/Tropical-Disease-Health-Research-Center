@@ -18,15 +18,13 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="header-title mt-0 mb-3">Leads Report</h4>
+                            <h4 class="header-title mt-0 mb-3">Publications</h4>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead class="thead-light">
                                         <tr>
-                                            <th>Lead</th>
-                                            <th>Email</th>
-                                            <th>Phone No</th>
-                                            <th>Company</th>
+                                            <th>Id</th>
+                                            <th>Title</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr><!--end tr-->
@@ -99,6 +97,51 @@
                                                 <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
                                             </td>
                                         </tr><!--end tr-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><!--end card-body-->
+                    </div><!--end card-->
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row mt-2">
+
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="header-title mt-0 mb-3">Blogs</h4>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Author</th>
+                                            <th>Title</th>
+                                           
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr><!--end tr-->
+                                    </thead>
+
+                                    <tbody>
+                                        @foreach (var blog in ViewBag.Blogs)
+                                        {
+                                            <tr>
+                                                <td><img src="../assets/images/users/user-5.jpg" alt="" class="thumb-sm rounded-circle mr-2">@blog.Id</td>
+                                                <td>@blog.Author</td>
+                                                <td>@blog.Title</td>
+
+                                                <td> <span class="badge badge-md badge-soft-success">Converted</span></td>
+                                                <td>
+                                                    <a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
+                                                    <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
+                                                </td>
+                                            </tr>
+
+                                            <!--end tr-->
+                                        }
+                                       
                                     </tbody>
                                 </table>
                             </div>

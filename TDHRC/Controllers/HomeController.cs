@@ -106,6 +106,13 @@ namespace TDHRC.Controllers
             return View(blog);
         }
 
+        //publication details
+        public IActionResult PublicationDetails(string id)
+        {
+            var publication = _context.Publications.FirstOrDefault(p => p.Id == id);
+            return View(publication);
+        }
+
         //Contact
         public IActionResult Contact()
         {
