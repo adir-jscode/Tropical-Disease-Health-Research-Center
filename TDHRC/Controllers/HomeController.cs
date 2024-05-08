@@ -78,7 +78,7 @@ namespace TDHRC.Controllers
             }
 
             
-            return RedirectToAction("Login");
+            return RedirectToAction("Index");
             
         }
 
@@ -104,6 +104,12 @@ namespace TDHRC.Controllers
         {
             var blog = _context.Blogs.FirstOrDefault(b => b.Id == id);
             return View(blog);
+        }
+
+        //Contact
+        public IActionResult Contact()
+        {
+            return View();
         }
 
         public IActionResult Privacy()
