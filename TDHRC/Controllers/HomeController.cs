@@ -119,6 +119,12 @@ namespace TDHRC.Controllers
             return View();
         }
 
+        //Donate
+        public IActionResult Donate()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
