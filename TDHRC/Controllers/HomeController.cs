@@ -56,6 +56,7 @@ namespace TDHRC.Controllers
                 }
                
                 Response.Cookies.Append("Username", admin.Username, options);
+                Response.Cookies.Append("AdminId", admin.Id, options);
                 return RedirectToAction("Index", "Admin");
             }
             else
@@ -84,10 +85,37 @@ namespace TDHRC.Controllers
 
             //Forgot Password
             public IActionResult ForgotPassword()
+            {
+                return View();
+            }
+        [HttpPost]
+        public IActionResult ForgotPassword(string email,string password,string cpassword)
         {
-            return View();
+            var admin = _context.Admins.FirstOrDefault(a => a.Email == email);
+            if (admin != null)
+            {
+                if (password == cpassword)
+                {
+                    admin.Password = password;
+                    _context.SaveChanges();
+                    TempData["success"] = "Password Changed Successfully";
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    TempData["Error"] = "Password Mismatch";
+                    TempData["Header"] = "Password Error";
+                    return RedirectToAction("ForgotPassword");
+                }
+            }
+            else
+            {
+                TempData["Error"] = "Email Not Found";
+                TempData["Header"] = "Email Error";
+                return RedirectToAction("ForgotPassword");
+            }
+           
         }
-
         public IActionResult About()
         {
             return View();

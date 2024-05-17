@@ -25,78 +25,29 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Title</th>
-                                            <th>Status</th>
+                                            
                                             <th>Action</th>
                                         </tr><!--end tr-->
                                     </thead>
 
                                     <tbody>
-                                        <tr>
-                                            <td><img src="../assets/images/users/user-10.jpg" alt="" class="thumb-sm rounded-circle mr-2">Donald Gardner</td>
-                                            <td>xyx@gmail.com</td>
-                                            <td>+123456789</td>
-                                            <td>Starbucks coffee</td>
-                                            <td> <span class="badge badge-md badge-soft-purple">New Lead</span></td>
-                                            <td>
-                                                <a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
-                                                <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
-                                            </td>
-                                        </tr><!--end tr-->
-                                        <tr>
-                                            <td><img src="../assets/images/users/user-9.jpg" alt="" class="thumb-sm rounded-circle mr-2">Matt Rosales</td>
-                                            <td>xyx@gmail.com</td>
-                                            <td>+123456789</td>
-                                            <td>Mac Donald</td>
-                                            <td> <span class="badge badge-md badge-soft-purple">New Lead</span></td>
-                                            <td>
-                                                <a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
-                                                <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
-                                            </td>
-                                        </tr><!--end tr-->
-                                        <tr>
-                                            <td><img src="../assets/images/users/user-8.jpg" alt="" class="thumb-sm rounded-circle mr-2">Michael Hill</td>
-                                            <td>xyx@gmail.com</td>
-                                            <td>+123456789</td>
-                                            <td>Life Good</td>
-                                            <td> <span class="badge badge-md badge-soft-danger">Lost</span></td>
-                                            <td>
-                                                <a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
-                                                <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
-                                            </td>
-                                        </tr><!--end tr-->
-                                        <tr>
-                                            <td><img src="../assets/images/users/user-7.jpg" alt="" class="thumb-sm rounded-circle mr-2">Nancy Flanary</td>
-                                            <td>xyx@gmail.com</td>
-                                            <td>+123456789</td>
-                                            <td>Flipcart</td>
-                                            <td> <span class="badge badge-md badge-soft-purple">New Lead</span></td>
-                                            <td>
-                                                <a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
-                                                <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
-                                            </td>
-                                        </tr><!--end tr-->
-                                        <tr>
-                                            <td><img src="../assets/images/users/user-6.jpg" alt="" class="thumb-sm rounded-circle mr-2">Dorothy Key</td>
-                                            <td>xyx@gmail.com</td>
-                                            <td>+123456789</td>
-                                            <td>Adidas</td>
-                                            <td> <span class="badge badge-md badge-soft-primary">Follow Up</span></td>
-                                            <td>
-                                                <a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
-                                                <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
-                                            </td>
-                                        </tr><!--end tr-->
-                                        <tr>
-                                            <td><img src="../assets/images/users/user-5.jpg" alt="" class="thumb-sm rounded-circle mr-2">Joseph Cross</td>
-                                            <td>xyx@gmail.com</td>
-                                            <td>+123456789</td>
-                                            <td>Reebok</td>
-                                            <td> <span class="badge badge-md badge-soft-success">Converted</span></td>
-                                            <td>
-                                                <a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
-                                                <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
-                                            </td>
-                                        </tr><!--end tr-->
+                                        @foreach(var publication in  ViewBag.Publications)
+                                        {
+                                            <tr>
+                                                
+                                                <td>@publication.Id</td>
+                                                <td>@publication.Title</td>
+                                                
+                                                <td>
+                                                    <a asp-route-Id="@publication.Id" asp-action="EditPublication" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
+                                                    <a asp-route-Id="@publication.Id" asp-action="DeletePublication"><i class="fas fa-trash-alt text-danger font-16"></i></a>
+                                                </td>
+                                            </tr>
+
+                                            <!--end tr-->
+                                        }
+                                        
+                                       
                                     </tbody>
                                 </table>
                             </div>
@@ -119,7 +70,7 @@
                                             <th>Author</th>
                                             <th>Title</th>
                                            
-                                            <th>Status</th>
+                                            
                                             <th>Action</th>
                                         </tr><!--end tr-->
                                     </thead>
@@ -128,14 +79,14 @@
                                         @foreach (var blog in ViewBag.Blogs)
                                         {
                                             <tr>
-                                                <td><img src="../assets/images/users/user-5.jpg" alt="" class="thumb-sm rounded-circle mr-2">@blog.Id</td>
+                                                <td>@blog.Id</td>
                                                 <td>@blog.Author</td>
                                                 <td>@blog.Title</td>
 
-                                                <td> <span class="badge badge-md badge-soft-success">Converted</span></td>
+                                                
                                                 <td>
-                                                    <a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
-                                                    <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
+                                                    <a asp-route-id="@blog.Id" asp-action="EditBlog" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a>
+                                                    <a asp-route-id="@blog.Id" asp-action="DeleteBlog"><i class="fas fa-trash-alt text-danger font-16"></i></a>
                                                 </td>
                                             </tr>
 
