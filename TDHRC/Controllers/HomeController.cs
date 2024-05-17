@@ -35,6 +35,12 @@ namespace TDHRC.Controllers
             return View();
         }
 
+        //AboutUs
+        public IActionResult AboutUs() 
+        { 
+            return View(); 
+        }
+
         [HttpPost]
         public IActionResult LoginValidate(string username, string password, string IsRememberME)
         {

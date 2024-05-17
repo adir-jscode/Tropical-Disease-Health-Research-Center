@@ -59,17 +59,13 @@
                                             <ul id="navigation">
                                                 <li><a asp-action="Index">Home</a></li>
                                                 <li>
-                                                    <a href="#">About Us</a>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">Leadership</a></li>
-                                                        <li><a href="#">Strategy</a></li>
-                                                        <li><a href="#">Mission & Vision</a></li>
-                                                    </ul>
-                                                    </li>
-                                                <li><a href="#">What we Do</a></li>
-                                                <li>
+                                                    <a asp-action="AboutUs">About Us</a>
+                                                   
+                                                </li>
+                                                @* <li><a href="#">What we Do</a></li> *@
+                                                @* <li>
                                                     <a href="#">Research</a>
-                                                   @*  <ul class="submenu">
+                                                    <ul class="submenu">
                                                         <li>
                                                             <a href="#">Research Area</a>
                                                             <ul class="submenu">
@@ -81,8 +77,8 @@
                                                             </ul>
                                                         </li>
                                                         
-                                                    </ul> *@
-                                                    </li>
+                                                    </ul>
+                                                    </li> *@
                                                 <li>
                                                     <a asp-action="Publications">Publications</a>
                                                     @* <ul class="submenu">
