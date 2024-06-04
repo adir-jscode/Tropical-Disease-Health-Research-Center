@@ -159,6 +159,11 @@ namespace TDHRC.Controllers
             return View();
         }
 
+        public IActionResult DataRepository()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
