@@ -14,6 +14,7 @@ namespace TDHRC.Controllers
         public HomeController(ILogger<HomeController> logger,ApplicationDbContext context)
         {
             _logger = logger;
+            
             _context = context;
         }
 
