@@ -47,9 +47,15 @@
                         <div class="row align-items-center">
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2">
-                                <div class="logo">
-                                    <a asp-controller="Home" asp-action="Index"><img src="~/assets/img/tdhrc_logo.jpg" alt="" height="60" width="52"></a>
+                                <div class="logo d-flex align-items-center">
+                                    <a class="text-center d-flex align-items-center text-decoration-none" asp-controller="Home" asp-action="Index">
+                                        <img src="~/assets/img/tdhrc_logo.jpg" alt="" height="60" width="52" class="logo-img me-2">
+                                        <h3 class="logo-text mb-0 text-nowrap">
+                                            Tropical Disease & Health Research Center
+                                        </h3>
+                                    </a>
                                 </div>
+
                             </div>
                             <div class="col-xl-10 col-lg-10">
                                 <div class="menu-wrapper  d-flex align-items-center justify-content-end">
@@ -57,9 +63,9 @@
                                     <div class="main-menu d-none d-lg-block">
                                         <nav>
                                             <ul id="navigation">
-                                                <li><a asp-action="Index">Home</a></li>
+                                                <li><a asp-action="Index">HOME</a></li>
                                                 <li>
-                                                    <a asp-action="AboutUs">About Us</a>
+                                                    <a asp-action="AboutUs">ABOUT US</a>
                                                    
                                                 </li>
                                                 @* <li><a href="#">What we Do</a></li> *@
@@ -80,7 +86,7 @@
                                                     </ul>
                                                     </li> *@
                                                 <li>
-                                                    <a asp-action="Publications">Publications</a>
+                                                    <a asp-action="Publications">PUBLICATIONS</a>
                                                     @* <ul class="submenu">
                                                         <li><a href="#">Scientific Publication</a></li>
                                                         <li><a href="#">Newsletter</a></li>
@@ -88,27 +94,28 @@
                                                     </ul> *@
                                                 </li>
                                                 <li>
-                                                    <a asp-action="Blogs">Blogs</a>
+                                                    <a asp-action="Blogs">BLOGS</a>
                                                     
                                                 </li>
-                                                <li><a asp-action="Contact">Contact</a></li>
-                                                <li><a asp-action="Donate">Donate</a></li>
+                                                <li><a asp-action="Contact">CONTACT</a></li>
+                                                <li><a asp-action="Donate">DONATE</a></li>
+                                                <li><a asp-action="DataRepository">DATA REPOSITORY</a></li>
                                             </ul>
                                         </nav>
                                     </div>
                                     @if(username !=null)
                                     {
                                         <div class="header-right-btn d-none d-lg-block ml-20">
-                                            <a asp-controller="Admin" asp-action="Index" class="btn header-btn">Dashboard</a>
+                                            <a asp-controller="Admin" asp-action="Index" class="btn header-btn">DASHBOARD</a>
                                         </div>
                                         <div class="header-right-btn d-none d-lg-block ml-20">
-                                            <a asp-controller="Home" asp-action="Logout" class="btn header-btn">Logout</a>
+                                            <a asp-controller="Home" asp-action="Logout" class="btn header-btn">LOGOUT</a>
                                         </div>
                                     }
                                     else
                                     {
                                         <div class="header-right-btn d-none d-lg-block ml-20">
-                                            <a asp-action="Login" class="btn header-btn">Login</a>
+                                            <a asp-action="Login" class="btn header-btn">LOGIN</a>
                                         </div>
                                     }
                                     
