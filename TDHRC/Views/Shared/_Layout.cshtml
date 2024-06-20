@@ -3,6 +3,7 @@
 
 }
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,9 +50,9 @@
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo d-flex align-items-center">
                                     <a class="text-center d-flex align-items-center text-decoration-none" asp-controller="Home" asp-action="Index">
-                                        <img src="~/assets/img/tdhrc_logo.jpg" alt="" height="60" width="52" class="logo-img me-2">
+                                        <img src="~/assets/img/tdhrc_logo.jpg" alt="" height="100" width="80" class="logo-img me-2">
                                         <h3 class="logo-text mb-0 text-nowrap">
-                                            TROPICAL DISEASE & HEALTH RESEARCH CENTER
+                                            Tropical Disease & Health <br /> Research Center
                                         </h3>
                                     </a>
                                 </div>
@@ -66,36 +67,36 @@
                                                 <li><a asp-action="Index">HOME</a></li>
                                                 <li>
                                                     <a asp-action="AboutUs">ABOUT US</a>
-                                                   
+
                                                 </li>
                                                 @* <li><a href="#">What we Do</a></li> *@
                                                 @* <li>
-                                                    <a href="#">Research</a>
-                                                    <ul class="submenu">
-                                                        <li>
-                                                            <a href="#">Research Area</a>
-                                                            <ul class="submenu">
-                                                                <li><a href="#"> Tropical disease</a></li>
-                                                                <li><a href="#">Infectious disease</a></li>
-                                                                <li><a href="#"> Heath system research</a></li>
-                                                                <li><a href="#"> Non-communicable disease</a></li>
-                                                                <li><a href="#">Climate change</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        
-                                                    </ul>
-                                                    </li> *@
+                                                <a href="#">Research</a>
+                                                <ul class="submenu">
+                                                <li>
+                                                <a href="#">Research Area</a>
+                                                <ul class="submenu">
+                                                <li><a href="#"> Tropical disease</a></li>
+                                                <li><a href="#">Infectious disease</a></li>
+                                                <li><a href="#"> Heath system research</a></li>
+                                                <li><a href="#"> Non-communicable disease</a></li>
+                                                <li><a href="#">Climate change</a></li>
+                                                </ul>
+                                                </li>
+
+                                                </ul>
+                                                </li> *@
                                                 <li>
                                                     <a asp-action="Publications">PUBLICATIONS</a>
                                                     @* <ul class="submenu">
-                                                        <li><a href="#">Scientific Publication</a></li>
-                                                        <li><a href="#">Newsletter</a></li>
-                                                        <li><a href="#">Blog & Newspaper Article</a></li>
+                                                    <li><a href="#">Scientific Publication</a></li>
+                                                    <li><a href="#">Newsletter</a></li>
+                                                    <li><a href="#">Blog & Newspaper Article</a></li>
                                                     </ul> *@
                                                 </li>
                                                 <li>
                                                     <a asp-action="Blogs">BLOGS</a>
-                                                    
+
                                                 </li>
                                                 <li><a asp-action="Contact">CONTACT</a></li>
                                                 <li><a asp-action="Donate">DONATE</a></li>
@@ -103,7 +104,7 @@
                                             </ul>
                                         </nav>
                                     </div>
-                                    @if(username !=null)
+                                    @if (username != null)
                                     {
                                         <div class="header-right-btn d-none d-lg-block ml-20">
                                             <a asp-controller="Admin" asp-action="Index" class="btn header-btn">DASHBOARD</a>
@@ -118,7 +119,7 @@
                                             <a asp-action="Login" class="btn header-btn">LOGIN</a>
                                         </div>
                                     }
-                                    
+
                                 </div>
                             </div>
                             <!-- Mobile Menu -->
@@ -134,7 +135,7 @@
     </header>
     <div class="container-fluid">
         <main role="main" class="pb-3">
-           
+
             @RenderBody()
             <partial name="_SweetAlert" />
         </main>
@@ -151,7 +152,7 @@
                                 <div class="single-footer-caption mb-30">
                                     <!-- logo -->
                                     <div class="footer-logo mb-35">
-                                        <a href="index.html"><img src="~/assets/img/new.png" alt="" height="60" width="100"></a>
+                                        <a href="index.html"><img src="~/assets/img/new.png" alt="" height="100" width="80"></a>
                                     </div>
                                     <div class="footer-tittle">
                                         <div class="footer-pera">
@@ -172,11 +173,11 @@
                                 <div class="footer-tittle">
                                     <h4>Information</h4>
                                     <ul>
-                                        <li><a asp-action="AboutUs">About</a></li>
-                                        
-                                        <li><a asp-action="Publications">Publications</a></li>
-                                        <li><a asp-action="Blogs">Blog</a></li>
-                                        <li><a asp-action="Contact">Contact</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Research</a></li>
+                                        <li><a href="#">Publications</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Contact</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -188,7 +189,7 @@
                                     <ul>
                                         <li><a href="#">support@tdhrc.org</a></li>
                                         <li><a href="#">House no - 105, 24-Agamasi lane, Bongshal. Dhaka-1100</a></li>
-                                       
+
                                         <li class="number"><a href="#">+8801608723720</a></li>
                                     </ul>
                                 </div>
@@ -207,12 +208,12 @@
                                     <p>
                                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                         Copyright &copy;<script>document.write(new Date().getFullYear());</script> TDHRC All rights reserved.
-                                        
+
                                         @* <strong>
-                                            <a href="https://adir-jscode.github.io/Adir/" target="_blank" class="text-white">MD SARAFAT ALI ADIR</a>
+                                        <a href="https://adir-jscode.github.io/Adir/" target="_blank" class="text-white">MD SARAFAT ALI ADIR</a>
                                         </strong> *@
-                                        
-                                       
+
+
                                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                     </p>
                                 </div>
@@ -233,7 +234,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <!-- loader -->
-   @*  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div> *@
+    @*  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div> *@
 
 
     <!-- JS here -->
@@ -261,7 +262,7 @@
     <script src="~/assets/js/jquery.sticky.js"></script>
     <!-- Progress -->
     <script src="~/assets/js/jquery.barfiller.js"></script>
-    
+
     <!-- counter , waypoint,Hover Direction -->
     <script src="~/assets/js/jquery.counterup.min.js"></script>
     <script src="~/assets/js/waypoints.min.js"></script>
@@ -274,12 +275,12 @@
     <script src="~/assets/js/jquery.validate.min.js"></script>
     <script src="~/assets/js/mail-script.js"></script>
     <script src="~/assets/js/jquery.ajaxchimp.min.js"></script>
-    
-    <!-- Jquery Plugins, main Jquery -->	
+
+    <!-- Jquery Plugins, main Jquery -->
     <script src="~/assets/js/plugins.js"></script>
     <script src="~/assets/js/main.js"></script>
 
-   
+
 
 
 
